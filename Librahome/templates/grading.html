@@ -1,0 +1,110 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../../../favicon.ico">
+
+    <title>LibraNews</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="https://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="static/css/grading-page.min.css" rel="stylesheet">
+
+  </head>
+
+  <nav class="navbar navbar-expand-sm navbar-dark bg-dark fixed-top">
+       <a class="navbar-brand" href="/">LibraNews</a>
+       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample03" aria-controls="navbarsExample03" aria-expanded="false" aria-label="Toggle navigation">
+         <span class="navbar-toggler-icon"></span>
+       </button>
+
+       <div class="collapse navbar-collapse" id="navbarsExample03">
+         <ul class="navbar-nav mr-auto">
+           <li class="nav-item active">
+             <a class="nav-link" href="#">Article analysis<span class="sr-only">(current)</span></a>
+           </li>
+           <li class="nav-item">
+             <a class="nav-link" href="#">Forum</a>
+           </li>
+           <li class="nav-item">
+             <a class="nav-link disabled" href="#">Disabled</a>
+           </li>
+           <li class="nav-item dropdown">
+             <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown03" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+             <div class="dropdown-menu" aria-labelledby="dropdown03">
+               <a class="dropdown-item" href="#">Action</a>
+               <a class="dropdown-item" href="#">Another action</a>
+               <a class="dropdown-item" href="#">Something else here</a>
+             </div>
+           </li>
+         </ul>
+       </div>
+     </nav>
+
+
+  <body>
+
+
+    <main role="main" class="container">
+      <form action="/grading" method="post">
+      <div class="form-row">
+        <div class="col-12 col-md-9 mb-2 mb-md-0">
+          <input type="text" name="news_url" class="form-control form-control-lg" placeholder="Enter url here...">
+        </div>
+              <select name="sites">
+                <option value="CNN">CNN</option>
+                <option value="NBC">NBC</option>
+                <option value="FOX">FOX</option>
+                <option value="ABC">ABC</option>
+                <option value="CBS">CBS</option>
+                <option value="NYT">NY Times</option>
+                <option value="NYDailyNews">NY Daily News</option>
+              </select>
+              <br><br><div class="col-12 col-md-5 mb-2 mb-md-0">
+              <input type="text" name="keyword" class="form-control form-control-lg" placeholder="Enter keyword here...">
+              </div>
+        <div class="col-6 col-md-2">
+          <button type="submit" class="btn btn-block btn-lg btn-primary">Search</button>
+        </div>
+      </div>
+    </form>
+      <div class="starter-template">
+        <h2>Search and analyze an article by giving us the url. Please note that we are still improving on the accuracy of the analysis.</h2>
+        <p class="lead">{{article}}</p>
+      </div>
+      <!--<iframe width="700" height="700" src={{article|safe}} ></iframe>-->
+      <p>Objective Percentage: {{objs}}%, the score will return Positive or Negative and it reflects the sentiment score based on the writing.</p>
+      <meter value={{obar}} min="0" max="100"></meter><br><br>
+      <p>Subjective Percentage: {{subs}}%, the score will return Positive or Negative and it reflects the sentiment score based on subjective view of the article.</p>
+      <meter value={{sbar}} min="0" max="100"></meter><br><br>
+      <p>Keyword Percentage: {{keys}}%, if the keyword is not found this will returns 0.0</p>
+      <meter value={{kbar}} min="0" max="100"></meter><br>
+
+    </main><!-- /.container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="../../../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+    <script src="https://getbootstrap.com/assets/js/vendor/popper.min.js"></script>
+    <script src="https://getbootstrap.com/dist/js/bootstrap.min.js"></script>
+
+
+   <!-- Footer -->
+   <footer class="footer">
+   <div class = "container">
+       <span class="text-muted">This footer does not exist yet.</span>
+   </div>
+   </footer>
+
+  </body>
+</html>
+

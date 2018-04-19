@@ -1,0 +1,15 @@
+body {
+  padding-top: 5rem;
+}
+body {
+  background:#7f7e83;
+}
+meter{
+  width: 800px;
+  height: 25px;
+}
+.starter-template {
+  padding: 3rem 1.5rem;
+  text-align: center;
+}
+
