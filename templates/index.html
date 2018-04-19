@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script>
+    $(function() {
+        $("#box1").on("change", function(event){
+            $.ajax({
+                data:{ box1 : $("#box1").val() },
+                type : "POST",
+                url : "/process"
+            })
+            .done(function(data){
+                $("#site1").attr("href", data.site1);
+                $("#image1").attr("src", data.image1);
+            });
+            event.preventDefault()
+        });
+       });
+    </script>
+
+    <script>
+    $(function() {
+        $("#box2").on("change", function(event){
+            $.ajax({
+                data:{ box1 : $("#box2").val() },
+                type : "POST",
+                url : "/process"
+            })
+            .done(function(data){
+                $("#site2").attr("href", data.site1);
+                $("#image2").attr("src", data.image1);
+            });
+            event.preventDefault()
+        });
+       });
+    </script>
+
+    <script>
+    $(function() {
+        $("#box3").on("change", function(event){
+            $.ajax({
+                data:{ box1 : $("#box3").val() },
+                type : "POST",
+                url : "/process"
+            })
+            .done(function(data){
+                $("#site3").attr("href", data.site1);
+                $("#image3").attr("src", data.image1);
+            });
+            event.preventDefault()
+        });
+       });
+    </script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Libra</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="static/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="static/vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+
+    <!-- Custom styles for this template -->
+    <link href="static/css/landing-page.min.css" rel="stylesheet">
+
+  </head>
+
+  <body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+         <a class="navbar-brand" href="#">LibraNews</a>
+         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample03" aria-controls="navbarsExample03" aria-expanded="false" aria-label="Toggle navigation">
+           <span class="navbar-toggler-icon"></span>
+         </button>
+
+         <div class="collapse navbar-collapse" id="navbarsExample03">
+           <ul class="navbar-nav mr-auto">
+             <li class="nav-item active">
+               <a class="nav-link" href="/grading">Article analysis<span class="sr-only">(current)</span></a>
+             </li>
+             <li class="nav-item">
+               <a class="nav-link" href="#">Forum</a>
+             </li>
+             <li class="nav-item">
+               <a class="nav-link disabled" href="#">Disabled</a>
+             </li>
+             <li class="nav-item dropdown">
+               <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown03" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+               <div class="dropdown-menu" aria-labelledby="dropdown03">
+                 <a class="dropdown-item" href="#">Action</a>
+                 <a class="dropdown-item" href="#">Another action</a>
+                 <a class="dropdown-item" href="#">Something else here</a>
+               </div>
+             </li>
+           </ul>
+         </div>
+       </nav>
+
+
+    <!-- Masthead -->
+    <header class="masthead text-white text-center">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-xl-9 mx-auto">
+            <h2 class="mb-5">News comparison site for people with an open mind</h2>
+          </div>
+          <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
+            <form action="/" method="post" >
+              <div class="form-row">
+
+
+                    <script>
+                  (function() { var gcse = document.createElement('script');
+                    var cx = '013399104250087714041:br6mfyiwfs8'; gcse.type = 'text/javascript';
+                    var gcse = document.createElement('script');
+                    gcse.type = 'text/javascript';
+                    gcse.async = true;
+                    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;             
+                    var s = document.getElementsByTagName('script')[0];
+                    s.parentNode.insertBefore(gcse, s);
+                  })();
+                </script>
+                <gcse:search></gcse:search>
+
+                </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Icons Grid -->
+    <!--<section class="features-icons bg-light text-center">-->
+      <div class="screenshot123" style="margin-left:1%;">
+        <div style="float:left; margin-right:1%; margin-bottom:1em; margin-top:1em;">
+          <form >
+          <div class="control">
+            <div class="select">
+              <select class="is-hovered" id="box1">
+                <option>Select News Sites here</option>
+                <option value="cnn">CNN</option>
+                <option value="nbc">NBC</option>
+                <option value="fox">FOX</option>
+                <option value="abc">ABC</option>
+                <option value="nyd">NY Daily News</option>
+                <option value="nyt">NY Times</option>
+                <option value="wtp">Washington Post</option>
+              </select> 
+                </div></div></form>
+            <a href={{site1}} id="site1" target="_blank" style="display: block; width:600px; height:500px; overflow:hidden;">
+            <img src={{ image1}} id="image1" style="width:100%; height:100%"/>
+            </a>
+            </div>
+        <div style="float:left; margin-right:1%; margin-bottom:1em; margin-top:1em;">
+          <form >
+          <div class="control">
+            <div class="select">
+              <select class="is-hovered" id="box2">
+                <option>Select News Sites here</option>
+                <option value="cnn">CNN</option>
+                <option value="nbc">NBC</option>
+                <option value="fox">Fox</option>
+                <option value="abc">ABC</option>
+                <option value="nyd">NY Daily News</option>
+                <option value="nyt">NY Times</option>
+                <option value="wtp">Washington Post</option>
+              </select> 
+                </div></div></form>
+            <a href={{site3}} id="site2" target="_blank" style="display: block; width:600px; height:500px; overflow:hidden;">
+            <img src={{ image2}} id="image2" style="width:100%; height:100%"/>
+            </a>
+            </div>
+        <div style="float:left; margin-right:1%; margin-bottom:1em; margin-top:1em;">
+          <form >
+          <div class="control">
+            <div class="select">
+              <select class="is-hovered" id="box3">
+                <option>Select News Sites here</option>
+                <option value="cnn">CNN</option>
+                <option value="nbc">NBC</option>
+                <option value="fox">Fox</option>
+                <option value="abc">ABC</option>
+                <option value="nyd">NY Daily News</option>
+                <option value="nyt">NY Times</option>
+                <option value="wtp">Washington Post</option>
+              </select> 
+                </div></div></form>
+            <a href={{site3}} id="site3" target="_blank" style="display: block; width:600px; height:500px; overflow:hidden;">
+            <img src={{ image3}} id="image3" style="width:100%; height:100%"/>
+            </a>
+            </div>
+
+
+    </div>
+
+
+
+  <!-- <section class="features-icons bg-light text-center"> -->
+    <!--<div class="screenshot234" style="margin-left:1%;">
+      <div style="float:left; margin-right:1%; margin-bottom:0.5em;">
+        <div class="dropdown">
+          <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">Select Sites Here
+          <span class="caret"></span></button>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+            <li role="presentation"><a role="menuitem" href="#">CNN</a></li>
+            <li role="presentation"><a role="menuitem" href="#">FOX</a></li>
+            <li role="presentation"><a role="menuitem" href="#">NBC</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation"><a role="menuitem" href="#">About Us</a></li>
+          </ul>
+        </div>
+        <a href="http://cnn.com/" target="_blank" style="display: block; width:600px; height:600px; overflow:hidden;">
+
+            <img src={{ image4}} style="width:100%; height:100%"/>
+          </a>
+          </div>
+      <div style="float:left; margin-right:1%; margin-bottom:0.5em;">
+        <div class="dropdown">
+          <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">Select Sites Here
+          <span class="caret"></span></button>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+            <li role="presentation"><a role="menuitem" href="#">CNN</a></li>
+            <li role="presentation"><a role="menuitem" href="#">FOX</a></li>
+            <li role="presentation"><a role="menuitem" href="#">NBC</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation"><a role="menuitem" href="#">About Us</a></li>
+          </ul>
+        </div>
+        <a href="http://foxnews.com/" target="_blank" style="display: block; width:600px; height:600px; overflow:hidden;">
+          <img src={{ image5}} style="width:100%; height:100%"/>
+          </a></div>
+      <div style="float:left; margin-right:1%; margin-bottom:0.5em;">
+        <div class="dropdown">
+          <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">Select Sites Here
+          <span class="caret"></span></button>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+            <li role="presentation"><a role="menuitem" href="#">CNN</a></li>
+            <li role="presentation"><a role="menuitem" href="#">FOX</a></li>
+            <li role="presentation"><a role="menuitem" href="#">NBC</a></li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation"><a role="menuitem" href="#">About Us</a></li>
+          </ul>
+        </div>
+        <a href="http://nbcnews.com/" target="_blank" style="display: block; width:600px; height:600px; overflow:hidden;">
+        <img src={{ image6}} style="width:100%; height:100%"/>
+        </a></div>
+  </div>-->
+  <!-- </section> -->
+
+
+    <!-- Icons Grid -->
+    <!--<section class="features-icons bg-light text-center">
+      <iframe src=""
+              width="600" height="400"
+              sandbox>
+      </iframe>
+      <iframe src=""
+        width="600" height="400"
+         sandbox>
+       </iframe>
+       <iframe src=""
+        width="600" height="400"
+         sandbox>
+       </iframe>
+     </section>-->
+
+    <!-- Image Showcases -->
+    </body>
+
+    <!-- Footer -->
+    <footer class="footer">
+    <div class = "container">
+        <span class="text-muted">This footer does not exist yet.</span>
+    </div>
+    </footer>
+    
+    <!-- Bootstrap core JavaScript -->
+    <script src="static/vendor/jquery/jquery.min.js"></script>
+    <script src="static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    </body></html>
